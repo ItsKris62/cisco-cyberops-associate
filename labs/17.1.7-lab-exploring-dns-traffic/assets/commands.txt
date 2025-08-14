@@ -1,0 +1,14 @@
+# Windows DNS Cache Flush
+ipconfig /flushdns
+
+# Linux (systemd-resolved)
+sudo systemd-resolve --flush-caches
+sudo systemctl restart systemd-resolved.service
+
+# Wireshark Filter
+udp.port == 53
+
+# nslookup
+nslookup
+> www.cisco.com
+> exit
